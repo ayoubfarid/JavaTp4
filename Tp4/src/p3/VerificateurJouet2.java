@@ -1,8 +1,8 @@
-package p2;
+package p3;
 
-public class VerificateurJouet1 implements Runnable{
+public class VerificateurJouet2 implements Runnable{
 	private String nom;
-	
+	public Thread p1;
 	
 	public String getNom() {
 		return nom;
@@ -12,15 +12,15 @@ public class VerificateurJouet1 implements Runnable{
 		this.nom = nom;
 	}
 
-	public VerificateurJouet1(String nom) {
+	public VerificateurJouet2(String nom) {
 		this.nom = nom;
+		p1=new Thread(this);
 	}
 	 
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		for(Jouet j: Simulation1.lesJouets) j.tuEsVerifiePar(this);
+		for(Jouet2 j: Simulation2.lesJouets) j.tuEsVerifiePar(this);
 	}
 
 	
