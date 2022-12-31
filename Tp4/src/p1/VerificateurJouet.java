@@ -3,6 +3,14 @@ package p1;
 public class VerificateurJouet implements Runnable {
 	private String nom;
 
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
 	public VerificateurJouet(String nom) {
 		this.nom = nom;
 	}
