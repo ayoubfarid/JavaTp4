@@ -11,12 +11,12 @@ public class Simulation3 {
 		for (int i = 0; i < 10 ;i++) 
 				lesJouets[i]=new Jouet3(i+1);
 		
-		VerificateurJouet3 v1=new VerificateurJouet3("Ahmed",1,Thread.MIN_PRIORITY);
-		VerificateurJouet3 v2=new VerificateurJouet3("Amine",1,Thread.MIN_PRIORITY);
-		VerificateurJouet3 v3=new VerificateurJouet3("Bachir",2,Thread.MAX_PRIORITY);
+		VerificateurJouet3 v1=new VerificateurJouet3("Ahmed",1,30);
+		VerificateurJouet3 v2=new VerificateurJouet3("Amine",1,15);
+		VerificateurJouet3 v3=new VerificateurJouet3("Bachir",2,5);
 		
-		v2.p1.start();
 		v1.p1.start();
+		v2.p1.start();
 		v3.p1.start();
 
 	}

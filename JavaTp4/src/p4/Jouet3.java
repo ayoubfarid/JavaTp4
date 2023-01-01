@@ -19,7 +19,7 @@ public class Jouet3 {
 
 	public synchronized void tuEsVerifiePar(VerificateurJouet3 v1) {
 
-		if (dejaVerifier)
+		if (dejaVerifier && v1.getNiveaux()==1)
 			return;
 		try {
 			while (!dejaVerifier && v1.getNiveaux() == 2)
@@ -30,15 +30,16 @@ public class Jouet3 {
 		}
 
 		System.out.println(" \t" + v1.getNom() + " commance jouet " + nombre);
-		Random r = new Random();
+	
 		try {
-			Thread.sleep(r.nextInt(1001));
+			Thread.sleep(v1.getVitesse());
 		} catch (InterruptedException e) {
 		}
 
 		System.out.println(" \t" + v1.getNom() + " fini jouet " + nombre);
 		
 		dejaVerifier = true;
+		if(v1.getNiveaux()==1)
 		notifyAll();
 		
 	}

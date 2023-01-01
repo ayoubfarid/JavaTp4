@@ -3,7 +3,7 @@ package p4;
 public class VerificateurJouet3 implements Runnable{
 	private String nom;
 	private int niveaux;
-	
+	private int vitesse;
 	public Thread p1;
 	
 	public String getNom() {
@@ -26,13 +26,21 @@ public class VerificateurJouet3 implements Runnable{
 		this.nom = nom;
 		p1=new Thread(this);
 		this.niveaux=niveaux;
-		p1.setPriority(vitesse);
+		this.vitesse=vitesse;
 	}
 	 
 
 	@Override
 	public void run() {
 		for(Jouet3 j: Simulation3.lesJouets) j.tuEsVerifiePar(this);
+	}
+
+	public int getVitesse() {
+		return vitesse;
+	}
+
+	public void setVitesse(int vitesse) {
+		this.vitesse = vitesse;
 	}
 
 	
